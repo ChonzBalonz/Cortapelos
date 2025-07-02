@@ -157,14 +157,9 @@
     </footer>
     <script src="script.js"></script>
     <script>
-      // Set --vh custom property for mobile devices
-      function setVh() {
-        if (window.innerWidth <= 640) {
-          document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-        }
+      if (window.innerWidth <= 640) {
+        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
       }
-      setVh();
-      window.addEventListener('resize', setVh);
     </script>
 </body>
 </html> 
