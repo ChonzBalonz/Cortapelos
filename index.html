@@ -16,13 +16,15 @@
       @media (max-width: 640px) {
         .hero-bg-mobile {
           background-attachment: scroll !important;
+          height: calc(var(--vh, 1vh) * 100);
+          min-height: 0;
         }
       }
     </style>
 </head>
 <body class="bg-black text-white m-0 p-0 overflow-x-hidden">
     <!-- Hero Section (bg-black) -->
-    <section class="bg-black relative pb-8 text-center bg-cover bg-center min-h-screen h-screen sm:h-[700px] hero-bg-mobile" style="background-image: url('images/logo.jpg'); background-attachment: fixed;">
+    <section class="bg-black relative pb-8 text-center bg-cover bg-center min-h-screen sm:h-[700px] hero-bg-mobile" style="background-image: url('images/logo.jpg'); background-attachment: fixed;">
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
       <div class="relative max-w-5xl mx-auto flex flex-col items-center justify-center min-h-screen h-full pt-16 pb-16">
         <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Transparent_pixel.png" alt="placeholder" class="w-full max-w-2xl opacity-0 select-none pointer-events-none" />
@@ -151,5 +153,15 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+      // Set --vh custom property for mobile devices
+      function setVh() {
+        if (window.innerWidth <= 640) {
+          document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+        }
+      }
+      setVh();
+      window.addEventListener('resize', setVh);
+    </script>
 </body>
 </html> 
