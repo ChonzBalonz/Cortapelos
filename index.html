@@ -13,11 +13,16 @@
       body { font-family: 'Montserrat', Arial, sans-serif; }
       .fade-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1); }
       .fade-section.visible { opacity: 1; transform: none; }
+      @media (max-width: 640px) {
+        .hero-bg-mobile {
+          background-attachment: scroll !important;
+        }
+      }
     </style>
 </head>
 <body class="bg-black text-white m-0 p-0 overflow-x-hidden">
     <!-- Hero Section (bg-black) -->
-    <section class="bg-black relative pb-8 text-center bg-cover bg-center min-h-screen h-screen sm:h-[700px]" style="background-image: url('images/logo.jpg'); background-attachment: fixed;">
+    <section class="bg-black relative pb-8 text-center bg-cover bg-center min-h-screen h-screen sm:h-[700px] hero-bg-mobile" style="background-image: url('images/logo.jpg'); background-attachment: fixed;">
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
       <div class="relative max-w-5xl mx-auto flex flex-col items-center justify-center min-h-screen h-full pt-16 pb-16">
         <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Transparent_pixel.png" alt="placeholder" class="w-full max-w-2xl opacity-0 select-none pointer-events-none" />
