@@ -24,7 +24,16 @@
           background-attachment: scroll !important;
         }
         .hero-bg-mobile-bg {
-          display: block;
+          display: block !important;
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          background-image: url('images/logo.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
         }
       }
       @media (min-width: 641px) {
@@ -38,9 +47,9 @@
     <!-- Hero Section (bg-black) -->
     <section class="bg-black relative pb-8 text-center bg-cover bg-center min-h-screen sm:h-[700px] hero-bg-mobile" style="background-image: url('images/logo.jpg'); background-attachment: fixed;">
       <!-- Mobile fixed background -->
-      <div class="hero-bg-mobile-bg absolute inset-0 w-full h-full z-0" style="background-image: url('images/logo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; position: absolute; z-index: 0; display: none;"></div>
-      <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
-      <div class="relative max-w-5xl mx-auto flex flex-col items-center justify-center min-h-screen h-full pt-16 pb-16 z-20">
+      <div class="hero-bg-mobile-bg"></div>
+      <div class="absolute inset-0 bg-black bg-opacity-40" style="z-index:1;"></div>
+      <div class="relative max-w-5xl mx-auto flex flex-col items-center justify-center min-h-screen h-full pt-16 pb-16" style="z-index:2;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Transparent_pixel.png" alt="placeholder" class="w-full max-w-2xl opacity-0 select-none pointer-events-none" />
       </div>
      </section>
